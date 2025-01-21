@@ -1,0 +1,53 @@
+﻿@model WebApplication2.Models.UserAddViewModel
+
+@{
+	Layout = null;
+}
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    Add
+</head>
+
+<body>
+    <form asp-controller="User" asp-action="Add" method="post">
+        <section>
+            <label asp-for="User.Id"></label>
+            <input asp-for="User.Id" />
+            <span style="color:red;" asp-validation-for="User.Id"></span>
+        </section>
+
+        <section>
+            <label asp-for="User.FirstName"></label>
+            <input asp-for="User.FirstName" />
+            <span style="color:red;" asp-validation-for="User.FirstName"></span>
+
+        </section>
+
+
+        <section>
+            <label asp-for="User.LastName"></label>
+            <input asp-for="User.LastName" />
+            <span style="color:red;" asp-validation-for="User.LastName"></span>
+
+        </section>
+
+        <section>
+            <label asp-for="User.CityId"></label>
+            <select asp-for="User.CityId" asp-items="Model.Cities"></select>
+        </section>
+
+        <section>
+            <button type="submit">Submit</button>
+        </section>
+
+        <section>
+            <a asp-controller="User" asp-action="jsonDataa" style="color:red">Go To Json Data</a>
+        </section>
+    </form>
+</body>
+
+</html>
